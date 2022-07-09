@@ -54,19 +54,16 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     if (currentResults[0] === ''){
         pilotStatus.innerHTML = "Pilot not ready!"
-        faulty.style.visibility="visible"
-        launchStatus.innerHTML = "Shuttle not ready for launch"
-        launchStatus.style.color = "red"
-        alert ('All Fields Required!')
     }
 
     if (currentResults[1] === ''){
         copilotStatus.innerHTML = "Copilot not ready!"
-        faulty.style.visibility="visible"
-        launchStatus.innerHTML = "Shuttle not ready for launch"
-        launchStatus.style.color = "red"
+    }
+
+    if (currentResults[0] === '' || currentResults[1] ==='' || currentResults[2] ==='' || currentResults[3] ===''){
         alert ('All Fields Required!')
     }
+    
 
     if (currentResults[2] < 10000){
         fuelStatus.innerHTML = "Not enough fuel for journey"
