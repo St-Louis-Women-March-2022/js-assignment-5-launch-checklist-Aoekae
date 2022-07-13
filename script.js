@@ -20,30 +20,16 @@ window.addEventListener("load", function() {
         formSubmission(document, faulty, pilotName, copilotName, fuelLevel, cargoMass)
 
         let listedPlanets;
-   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+
         let listedPlanetsResponse = myFetch();
 
         listedPlanetsResponse.then(function (result) {
-console.log(`the result is ${result[0].value}`)
+
         listedPlanets = result;
 
    }).then(function () {
-       
-       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-
-//it gets to the pick planets part of the function, it's seeing the parts of the function it should
-
-    let planets = pickPlanet(listedPlanets)
-
-       console.log(planets)
-
-       console.log(`planets.name is ${planets}`)
-
-    //    console.log(planets.imageUrl)
-
-    addDestinationInfo(document, planets.name, planets.diameter, planets.star, planets.distance, planets.moons, planets.imageUrl)
-
-   })
-          
-});   
+        let planets = pickPlanet(listedPlanets)
+        addDestinationInfo(document, planets.name, planets.diameter, planets.star, planets.distance, planets.image, planets.moons)
+        })
+    });   
 });
