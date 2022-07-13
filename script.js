@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 
-// const scriptHelper = require("./scriptHelper.js")
+const scriptHelper = require("./scriptHelper.js")
 
 
 window.addEventListener("load", function() {
