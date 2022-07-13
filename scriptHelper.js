@@ -15,17 +15,8 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                     <li>Distance from Earth: ${distance}</li>
                     <li>Number of Moons: ${moons} </li>
                 </ol>
-                <img src="${imageUrl}">
+                <img src=${imageUrl}>
    `
-   console.log(`how is the Add destination info function seeing the following variables
-   ${typof(name)}
-   ${typof(diameter)}
-   ${typof(star)}
-   ${typof(distance)}
-   ${typof(moons)}
-   ${typof(imageUrl)}
-   
-   `)
 }
 
 function validateInput(testInput) {
@@ -119,7 +110,8 @@ return planetsReturned;
 }
 
 function pickPlanet(planetsReturned) {
-    planet = Math.floor(Math.random()*planetsReturned.length);
+    let planetIndex = Math.floor(Math.random()*planetsReturned.length);
+    let planet = planetsReturned[planetIndex]
     return planet;
 }
 

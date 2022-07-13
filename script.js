@@ -24,26 +24,25 @@ window.addEventListener("load", function() {
         let listedPlanetsResponse = myFetch();
 
         listedPlanetsResponse.then(function (result) {
-console.log(`the result is ${result}`)
+console.log(`the result is ${result[0].value}`)
         listedPlanets = result;
-       //listedPlanets is coming back as undefined but it is seeing these lines of code. results is also undefined. so the problem is most likely results
+
    }).then(function () {
        
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
 
 //it gets to the pick planets part of the function, it's seeing the parts of the function it should
-    //    let planets = listedPlanetsResponse.pickPlanet(listedPlanets);
 
     let planets = pickPlanet(listedPlanets)
 
        console.log(planets)
 
-       console.log(planets.name)
+       console.log(`planets.name is ${planets}`)
 
-       console.log(planets.imageUrl)
+    //    console.log(planets.imageUrl)
 
-       let destination = addDestinationInfo(document, planets.name, planets.diameter, planets.star, planets.distance, planets.moons, planets.imageUrl)
-console.log(destination)
+    addDestinationInfo(document, planets.name, planets.diameter, planets.star, planets.distance, planets.moons, planets.imageUrl)
+
    })
           
 });   
